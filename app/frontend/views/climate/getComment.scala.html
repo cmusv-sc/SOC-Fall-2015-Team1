@@ -1,0 +1,63 @@
+@*******************************************************************************
+* Licensed to the Apache Software Foundation (ASF) under one or more		   *
+* contributor license agreements.  See the NOTICE file distributed with	   *
+* this work for additional information regarding copyright ownership.         *
+* The ASF licenses this file to You under the Apache License, Version 2.0     *
+* (the "License"); you may not use this file except in compliance with        *
+* the License.  You may obtain a copy of the License at                       *
+*                                                                             *
+*    http://www.apache.org/licenses/LICENSE-2.0                               *
+*																			   *
+* Unless required by applicable law or agreed to in writing, software         *
+* distributed under the License is distributed on an "AS IS" BASIS,           *
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    *
+* See the License for the specific language governing permissions and         *
+* limitations under the License.											   *
+*******************************************************************************@ 
+
+@(commentForm: play.data.Form[Comment])
+@import helper._ 
+
+@main("getComment") {
+
+<!-- <div class="jumbotron">
+	<div class="row">
+	<div class="col-md-5">
+	</div>
+	<div class="col-md-6">
+		<h2>Sign Up Page</h2>
+		<div class="form-group" >
+			<input type="text" class="form-control" placeholder="UserName" name="username" style="margin-bottom: 4px">
+			<input type="text" class="form-control" placeholder="First Name" name="firstname" style="margin-bottom: 4px">
+			<input type="text" class="form-control" placeholder="Last Name" name="lastname" style="margin-bottom: 4px">
+			<input type="password" class="form-control" placeholder="Password" name="password1" style="margin-bottom: 4px">
+			<input type="password" class="form-control" placeholder="Confirm Password" name="password2" style="margin-bottom: 4px">
+		</div>
+		<input type="submit" value="Register" style="width:100px;margin-right:10px;background:#1489FF;color:white;" />
+		<input type="submit" value="Clear" style="width:100px;margin-right:10px;background:#1489FF;color:white;" />
+		<input type="submit" value="Back" style="width:100px;margin-right:10px;background:#1489FF;color:white;" />			
+	</div>
+</div>
+</div> -->
+	<!-- @flash_message()    
+     @if(true){ -->
+	    <h1>Get Comment</h1>
+	    @form(routes.CommentController.getCommentByID()) {
+	    	@inputText(
+	        	commentForm("serviceID"),
+	        	'_label -> "serviceID"
+	        )
+	           
+	        
+	        <input class="btn" type="submit" value="Submit">
+	        <a href="@routes.ClimateServiceController.climateServices()" class="btn">Cancel</a>
+	    }
+	
+		<br>
+		    
+	    <!-- @form(routes.ClimateServiceController.downloadClimateService(), 'class -> "form-horizontal", 'role -> "form") {
+	
+	        <button type="submit" name="action" value="download">Download</button>
+	    } -->
+    <!-- } -->
+}

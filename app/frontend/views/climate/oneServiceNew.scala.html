@@ -1,0 +1,627 @@
+@*******************************************************************************
+* Licensed to the Apache Software Foundation (ASF) under one or more		   *
+* contributor license agreements.  See the NOTICE file distributed with	   *
+* this work for additional information regarding copyright ownership.         *
+* The ASF licenses this file to You under the Apache License, Version 2.0     *
+* (the "License"); you may not use this file except in compliance with        *
+* the License.  You may obtain a copy of the License at                       *
+*                                                                             *
+*    http://www.apache.org/licenses/LICENSE-2.0                               *
+*																			   *
+* Unless required by applicable law or agreed to in writing, software         *
+* distributed under the License is distributed on an "AS IS" BASIS,           *
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    *
+* See the License for the specific language governing permissions and         *
+* limitations under the License.											   *
+*******************************************************************************@ 
+
+@(url: String, serviceName:String, serviceId: String, ratingForm: play.data.Form[Rating], commentForm: play.data.Form[Comment], comments: List[Comment], climateServices: List[metadata.ClimateService], AllClimateServices: List[metadata.ClimateService], myLike: String, recommendServices: List[metadata.ClimateService]) 
+
+@import helper._ 
+
+@scripts = {
+<script type="text/javascript">
+
+
+var services = [];
+var newList = [];
+var names = [];
+like = String(@myLike);
+var names = [];
+$(document).ready(function(){
+	var obj = document.getElementById("iframe");
+	resizeIframe(obj);
+	var curCursorPos;
+	var newService;
+    setLikeInitial();
+	// getData();
+	function getFields(input, field, index) {
+    	var output = (input[index][field]);
+    	return output;
+	}
+
+
+	function setLikeInitial(){
+		if (like === 'true') {
+			$("likeButton").html("<strong> Unlike! </strong>");
+			var tmp10 = document.getElementById("inputLikeVar");
+            tmp10.value = like;
+            console.log(tmp10.value);
+		} else if (like === 'false') { 
+            $("likeButton").html("<strong> Like! </strong>");
+            var tmp10 = document.getElementById("inputLikeVar");
+            tmp10.value = like;
+            console.log(tmp10.value);
+		} 
+	}
+
+	$("#like_button").click(function(){
+		if (like === 'false') {
+			like = 'true';
+			$("likeButton").html("<strong> Unlike! </strong>");
+			var tmp10 = document.getElementById("inputLikeVar");
+            tmp10.value = like;
+            console.log(tmp10.value);
+		} else if (like === 'true') {
+			like = 'false';
+            $("likeButton").html("<strong> Like! </strong>");
+            var tmp10 = document.getElementById("inputLikeVar");
+            tmp10.value = like;
+            console.log(tmp10.value);
+		} else {
+			$("likeButton").html("<strong>My Like --> invalid</strong>");
+		}
+    	
+    })
+
+
+	$('.rating_star').change(function(){ 
+		var tmp1 = document.getElementById("rating_hidden");
+		tmp1.value = this.value;   
+		$('.choice').text( this.value + ' stars' );  
+	})
+	
+	
+	$('#auto_services').change(function(){ 
+		console.log("inside service")
+		var tmp1 = document.getElementById("hidden_tags");
+		var arr = this.value.split(",");
+		var tagEntered = [];
+		for (i=0;i<arr.length;i++) {
+			// console.log(arr[i]);
+			// console.log("before");
+			var result = getFields(newList, "name",arr[i]);
+			tagEntered.push(result);
+			// console.log(result);
+			// console.log(newList)
+		}
+		tmp1.value = tagEntered.toString();
+		console.log("--------")
+		 console.log(this.value)
+	})
+
+
+	
+
+
+	var friends = [
+	'friends1','friends2'
+	];
+
+
+		// console.log(services);
+		$('#mentionServices_id').autocomplete({
+			source: services
+		});
+
+		// $('#comment_autocomplete').autocomplete({
+		// 	source: services
+		// });
+
+
+// $('#comment_autocomplete').keydown(function(e){
+// 	commentBox = document.getElementById("comment_autocomplete");
+// 	if (e.keyCode==50&&e.shiftKey) {
+// 				// var dropdownList1 = document.createElement("select");
+// 				// for (i=0;i<services.length;i++){
+// 				// 	var op = new Option();
+// 				// 	op.value = i;
+// 				// 	op.text = services[i];
+// 				// 	dropdownList1.options.add(op);
+// 				// }
+// 				// commentBox.appendChild(dropdownList1);
+// 				$(this).autocomplete({
+// 					source: services
+// 				});
+// 				// document.addChild(dropdownList1);
+// 			}
+// 		});
+
+// $("#comment_autocomplete").bind("keydown keypress", function() {
+// 	curCursorPos = $(this).caret();
+// });
+
+
+$('#mentionFriends_id').autocomplete({
+	source: friends
+});
+
+
+$(function(){
+	getData();
+	getAllUser();
+	// console.log(services);
+	tagsList = ["funny service","boring service","2-D","3-D","heat service","map service"];
+		for (i=0;i<tagsList.length;i++){
+		if (tagsList[i]){
+			newList.push({
+				id: i,
+				name: tagsList[i]
+			});
+		}
+}
+$('#auto_services').tokenInput(newList,{ 
+
+	theme: "facebook",
+	noResultsText: "Nothin' found.",
+	preventDuplicates: true
+}); 
+
+
+$(function(){
+	$.fn.atwho.debug = true
+	var emojis = [
+	"smile", "iphone", "girl", "smiley", "heart", "kiss", "copyright", "coffee",
+	"a", "ab", "airplane", "alien", "ambulance", "angel", "anger", "angry",
+	"arrow_forward", "arrow_left", "arrow_lower_left", "arrow_lower_right",
+	"arrow_right", "arrow_up", "arrow_upper_left", "arrow_upper_right",
+	"art", "astonished", "atm", "b", "baby", "baby_chick", "baby_symbol",
+	"balloon", "bamboo", "bank", "barber", "baseball", "basketball", "bath",
+	"bear", "beer", "beers", "beginner", "bell", "bento", "bike", "bikini",
+	"bird", "birthday", "black_square", "blue_car", "blue_heart", "blush",
+	"boar", "boat", "bomb", "book", "boot", "bouquet", "bow", "bowtie",
+	"boy", "bread", "briefcase", "broken_heart", "bug", "bulb",
+	"person_with_blond_hair", "phone", "pig", "pill", "pisces", "plus1",
+	"point_down", "point_left", "point_right", "point_up", "point_up_2",
+	"police_car", "poop", "post_office", "postbox", "pray", "princess",
+	"punch", "purple_heart", "question", "rabbit", "racehorse", "radio",
+	"up", "us", "v", "vhs", "vibration_mode", "virgo", "vs", "walking",
+	"warning", "watermelon", "wave", "wc", "wedding", "whale", "wheelchair",
+	"white_square", "wind_chime", "wink", "wink2", "wolf", "woman",
+	"womans_hat", "womens", "x", "yellow_heart", "zap", "zzz", "+1",
+	"-1"
+	]
+    // var jeremy = decodeURI("J%C3%A9r%C3%A9my") // Jérémy
+    // var names = ["name1","name2"];
+
+    names = $.map(names,function(value,i) {
+    	return {'id':i,'name':value,'email':value+"@@gmail.com"};
+    });
+
+
+    // var services = ["services1", "service2"];
+    services = $.map(services,function(value,i) {
+    	return {'name':value,'url':value+"...url"};
+    });
+
+    var emojis = $.map(emojis, function(value, i) {return {key: value, name:value}});
+
+    var at_config = {
+    	at: "@@",
+    	data: names,
+    	insertTpl: "@@${name}",
+    	displayTpl: "<li>${name} <small>${email}</small></li>",
+    	limit: 200
+    }
+
+    var hash_config = {
+    	at: "#",
+    	data: services,
+    	insertTpl: "#${name}",
+    	displayTpl: "<li>${name} <small>${url}</small></li>",
+    	limit: 300
+    }
+
+    var emoji_config = {
+    	at: ":",
+    	data: emojis,
+    	displayTpl: "<li>${name} <img src='https://assets-cdn.github.com/images/icons/emoji/${key}.png'  height='20' width='20' /></li>",
+    	insertTpl: ':${key}:',
+    	delay: 400
+    }
+    $inputor = $('#comment_autocomplete').atwho(at_config).atwho(hash_config).atwho(emoji_config);
+    $inputor.caret('pos', 100);
+    $inputor.focus().atwho('run');
+
+    emoji_config.insertTpl = "<img src='https://assets-cdn.github.com/images/icons/emoji/${name}.png'  height='20' width='20' />"
+    $('#editable').atwho(at_config).atwho(emoji_config);
+
+  //   ifr = $('#iframe1')[0]
+  //   doc = ifr.contentDocument || iframe.contentWindow.document
+  //   if ((ifrBody = doc.body) == null) {
+  //     // For IE
+  //     doc.write("<body></body>")
+  //     ifrBody = doc.body
+  // }
+  // ifrBody.contentEditable = true
+  // ifrBody.id = 'ifrBody'
+  // ifrBody.innerHTML = 'For <strong>WYSIWYG</strong> which using <strong>iframe</strong> such as <strong>ckeditor</strong>'
+  // $(ifrBody).atwho('setIframe', ifr).atwho(at_config)
+});
+
+
+
+
+});
+
+
+
+
+});
+
+function getData() {
+	$.ajax({
+		type: 'Get',
+		dataType: 'text',
+		url: '/climate/mentionServices',
+		async: false,
+		success: function(data){
+						// alert("return from ajax"+data+"lol");
+						// console.log(typeof data);
+						console.log("inside get data" + services);
+						handleData(data);
+					}
+				})
+}
+
+
+
+
+
+function getAllUser() {
+	$.ajax({
+		type: 'Get',
+		dataType: 'text',
+		url: '/climate/mentionUsers',
+		async: false,
+		success: function(data){
+						// alert("return from ajax"+data+"lol");
+						// console.log(typeof data);
+						console.log("inside get all user" + data);
+						handleAllUser(data);
+					}
+				})
+}
+
+
+function handleData(data){
+		// console.log("handle data "+ data);
+		newService = data;
+		var arr = data.split("+");
+
+		for (i=0;i<arr.length;i++){
+			if (arr[i]){
+				services.push(arr[i]);
+			}
+		}
+}
+
+
+
+
+function handleAllUser(data){
+		
+		newUser = data;
+		var arr = data.split("+");
+
+		for (i=0;i<arr.length;i++){
+			if (arr[i]){
+				names.push(arr[i]);
+			}
+		}
+	}
+
+
+	function resizeIframe(obj) {
+		obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+	}
+
+
+// 	$(function(){
+// 		getData();
+// 		console.log(services);
+
+// 		var newList = [];
+// 		for (i=0;i<services.length;i++){
+// 			newList.push({
+// 				id: i,
+// 				name: services[i]
+// 			});
+// 		}
+//   $('#auto_services').tokenInput(newList,{ 
+
+//       theme: "facebook",
+//       noResultsText: "Nothin' found.",
+//       preventDuplicates: true
+//   }); 
+
+// });
+
+
+
+
+
+
+
+</script>
+}
+
+<style type="text/css">
+	html, body {
+		background:#F9F9F9;
+		padding: 0;
+		margin: 0;
+		font: 14px/1.6 "Lucida Grande", "Helvetica", sans-serif;
+		color: #333;
+	}
+
+
+	h1,h2,h3,h4 {
+		font-family: 'PT Sans', sans-serif;
+		line-height: 40px;
+		color: inherit;
+		font-weight: bold;
+		margin: 10px 0;
+		text-rendering: optimizelegibility;
+	}
+	h2,h3 {
+		color: gray;
+	}
+	strong {
+		color: #424242;
+	}
+
+	a {
+		color: #4183C4;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	.wrapper {
+		width: 750px;
+		padding: 20px;
+		margin: 0 auto;
+	}
+	header {
+		margin-top:70px;
+		margin-bottom: 50px;
+	}
+	header h1 {
+		text-align: center;
+		font-size: 75px;
+	}
+	h1 i {
+		color: rgb(182, 180, 180);
+		font-style: normal;
+		font-weight: normal;
+	}
+
+	.inputor {
+		height: 160px;
+		width: 90%;
+		border: 1px solid #dadada;
+		border-radius: 4px;
+		padding: 5px 8px;
+		outline: 0 none;
+		margin: 10px 0;
+		background: white;
+		font-size: inherit;
+		overflow-y: scroll;
+	}
+	.inputor:focus {
+		border: 1px solid rgb(6, 150, 247);
+	}
+
+	ul.doc {
+		list-style:none;
+	}
+	ul.doc li {
+		display:inline-block;
+		margin: 0 10px;
+	}
+
+	footer {
+		margin: 30px 0;
+	}
+
+	.github {
+		text-align: center;
+	}
+
+</style>
+
+<input style="margin-top:200px" type="hidden" value="hidden_value">
+<!-- Mention Friend  <input type="text" name="mentionFriends" id="mentionFriends_id"/></br>
+Meantion Service  <input type="text" name="mentionServices" id="mentionServices_id"/>
+ -->
+
+<!-- @for(climateService <- AllClimateServices){
+<p><font size="3">@climateService.getClimateServiceName()</font></p>
+} -->
+
+@main("Service", scripts) {
+
+<table class="table table-striped table-bordered table-condensed ex2 tablesorter" id = "csTable">
+	<thead>
+		<tr>
+			<th class="col-md-4">Url</td>
+				<th class="col-md-2">Version Number</td>
+				</tr>
+			</thead>
+			@for(climateService <- climateServices){
+			<tr>
+				<td><a href = "@{routes.ClimateServiceController.oneService(climateService.getUrl())}"><font size="2">@climateService.getUrl()</a></font></td>
+				<td><font size="2">@climateService.getVersion()</font></td>
+			</tr>
+		}
+	</table>
+
+	<iframe id="iframe" width="100%" height="800px" src="@url" frameborder="0" >
+	</iframe>
+
+	
+	
+
+	
+
+
+
+
+
+	<table class="table table-striped table-bordered table-condensed ex2 tablesorter" id = "cmTable">
+		<thead>
+			<tr>
+				<th class="col-md-4">Comment</td>
+					<th class="col-md-2">User</td>
+						<th class="col-md-2">Date</td>	
+						<th class="col-md-2">Tags</td>	
+						</tr>
+					</thead>
+					@for(comment <- comments){
+					<tr>
+						<td><font size="3">@comment.getContent()</font></td>
+						<td><font size="3">@comment.getCommenter()</font></td>
+						<td><font size="3">@comment.getTime()</font></td>
+						<td><font size="3">@comment.getTagList()</font></td>
+					</tr>
+				}
+			</table>
+
+
+			@form(routes.CommentController.addComment(session.get("email"),serviceId)) {
+			<table width="400">
+				<h2>Add a comment</h2>
+				<br>
+				<div class = "form-group">
+					@textarea(field = commentForm("Content"), args = 'rows -> 5, 'cols -> 40, 'class -> "form-control", 'placeholder -> "Please type in your comment",'id -> "comment_autocomplete")
+				    @inputText(
+								commentForm("hidden_tags"),
+								'id -> "hidden_tags",
+								'placeholder-> "hidden tag here",
+								'_label -> "",
+								'type -> "hidden"
+								)
+				</div>
+
+				<div id="searchbar">
+					<h4>Adding tags</h4>
+					<input type="text" id="auto_services" name="auto_services">
+				</div>
+
+				<!-- <div id="searchbar">
+					<p>Include friends</p>
+					<input type="text" id="auto_friends" name="auto_friends">
+				</div> -->
+				<div align="center" style="margin-top:50px">
+					<input class="btn" type="submit" value="Submit">
+				</div>
+
+				<!-- <div class="inputor" style="overflow: hidden">
+					<iframe src="" id="iframe1" style="width: 100%; height: 100%; border: 0px;"></iframe>
+				</div> -->
+
+			</table>
+		}
+
+
+
+		
+
+        
+
+
+		@form(routes.UserController.addRatingNew(url,serviceName,serviceId,session.get("email"))){
+		<h2 style="margin-top:100px">Add a Rating  &  Like Our Service</h2>
+		<div class="container-fluid">
+			<div class="row">  
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<table>
+						<tr>
+							<span class="star-rating">
+								<input class="rating_star" type="radio" name="rating" value="1"><i></i>
+								<input class="rating_star" type="radio" name="rating" value="2"><i></i>
+								<input class="rating_star" type="radio" name="rating" value="3"><i></i>
+								<input class="rating_star" type="radio" name="rating" value="4"><i></i>
+								<input class="rating_star" type="radio" name="rating" value="5"><i></i>
+								<!-- <input type="hidden" name="user_rating" id="rating_hidden"> -->
+								@inputText(
+								ratingForm("ratingNum"),
+								'id -> "rating_hidden",
+								'placeholder-> "rating here",
+								'_label -> "Rating"
+								)
+								@inputText(
+								ratingForm("inputLike"),
+								'id -> "inputLikeVar",
+								'placeholder-> "like here",
+								'_label -> "like"
+								)
+
+
+							</span>
+
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-4">
+					<button id="like_button" type="button" style="border:none;background-color: Transparent">
+						<img src='@routes.Assets.at("images/like.png")'/>
+					</button><likeButton></likeButton> 
+				</div>
+			</div>
+			<div align="center" style="margin-top:50px">
+				<input class="btn" type="submit" value="Rate">
+			</div>
+		}
+
+
+		<div class="container" style="height:100vh; background-size: 100%;">
+            <br>
+            <h2>User Like This Service Also Like:</h2>
+            <br>
+            <table class="table table-striped table-bordered table-condensed ex2 tablesorter" id = "cmTable">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Climate Service Name</td>
+					<th class="col-md-4">Purpose</td>					
+					<th class="col-md-2">Average Rating</td>
+					<th class="col-md-2"># of Votes</td>
+                </tr>
+            </thead>
+                <!-- @for(service <- recommendServices){
+                    <tr>
+                    <td><a href = "@{routes.ClimateServiceController.oneService(service.getUrl())}"><font size="2">@service.getUrl()</a></font></td>
+                    </tr>
+                } -->
+
+
+                @for(service <- recommendServices){
+						<tr>
+							<td><a href = "@{routes.ClimateServiceController.oneServiceNew(service.getUrl(),service.getClimateServiceName(),service.getId())}"><font size="3">@service.getClimateServiceName()</a></font></td>
+
+							<td><span class="@service.getClimateServiceName() editable"  data-name='purpose'><font size="3">
+								@service.getPurpose() </font></span></td>
+									<td style="color:red"><font size="3">@service.getAvgScore()<font size="3"></td><td><font size="3">@service.getVoteCount()<font size="3"></td>	
+								</tr>
+							}
+           </table>
+    </div>
+
+
+
+
+		
+	}

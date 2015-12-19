@@ -1,0 +1,34 @@
+/newHome                        Our new home page
+
+/login                          To login
+
+/logout                         To log out
+
+/authenticate                   To authenticate the user when login
+
+/signup                         To sign up
+
+/createNewUser                  To create a new user
+
+/createSuccess                  The page showing creating a user succesfully
+
+/isEmailExisted                 Check if the email is existed
+
+/newAllServices                 The new main service list page
+
+/climate/checkLike              Check if a user like this service
+
+/climate/mentionServices        Mention a aservice using hashtat
+
+/climate/oneServiceNew          Our new individual service page (GET) / Add a rating (POST)
+
+/climate/mentionUsers           Mention a user using @
+
+
+/climate/searchService          Our service search page
+
+/climate/searchServiceResult    Page showing the search results
+
+/comment/addComment             API to add a comment
+
+/comment/getCommentByID         API to get comments for a specific service

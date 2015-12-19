@@ -1,0 +1,340 @@
+[0m[[0minfo[0m] [0mLoading project definition from /home/SOCDev/SOC-Fall-2015-Team1/ApacheCMDA-Backend/project[0m
+[0m[[0minfo[0m] [0mSet current project to ApacheCMDA_Backend (in build file:/home/SOCDev/SOC-Fall-2015-Team1/ApacheCMDA-Backend/)[0m
+
+[35m--- (Running the application, auto-reloading is enabled) ---[0m
+
+[[37minfo[0m] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9034
+
+[32m(Server started, use Ctrl+D to stop and go back to the console...)[0m
+
+[[37minfo[0m] play - Application started (Dev)
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+Backend Calling getAllClimateServices
+7
+Hibernate: select comment0_.id as id1_1_, comment0_.commenter as commente2_1_, comment0_.content as content3_1_, comment0_.serviceId as serviceI4_1_, comment0_.time as time5_1_ from Comment comment0_ where comment0_.serviceId=?
+Finish finding comments
+0
+hehedahaaha
+start to search climate service by key words
+Hibernate: select c.* from ClimateService c where c.name like ?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+get service successfully
+hahaha
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+ISLIKE email: bob@gmail.com serviceID: 7
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select servicelik0_.service_id as service_1_10_, servicelik0_.user_id as user_id2_10_ from ServiceLike servicelik0_ where servicelik0_.user_id=? and servicelik0_.service_id=?
+Hibernate: select climateser0_.id as id1_0_0_, climateser0_.avgScore as avgScore2_0_0_, climateser0_.createTime as createTi3_0_0_, climateser0_.name as name4_0_0_, climateser0_.purpose as purpose5_0_0_, climateser0_.rootServiceId as rootServ6_0_0_, climateser0_.scenario as scenario7_0_0_, climateser0_.url as url8_0_0_, climateser0_.creatorId as creator11_0_0_, climateser0_.versionNo as versionN9_0_0_, climateser0_.voteCount as voteCou10_0_0_, user1_.id as id1_11_1_, user1_.affiliation as affiliat2_11_1_, user1_.email as email3_11_1_, user1_.faxNumber as faxNumbe4_11_1_, user1_.firstName as firstNam5_11_1_, user1_.highestDegree as highestD6_11_1_, user1_.lastName as lastName7_11_1_, user1_.mailingAddress as mailingA8_11_1_, user1_.middleInitial as middleIn9_11_1_, user1_.password as passwor10_11_1_, user1_.phoneNumber as phoneNu11_11_1_, user1_.researchFields as researc12_11_1_, user1_.title as title13_11_1_, user1_.userName as userNam14_11_1_ from ClimateService climateser0_ left outer join User user1_ on climateser0_.creatorId=user1_.id where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+ISLIKE Response: true
+GetRecommendServices, email = bob@gmail.com
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Get Recommend Services user_id = 112
+Hibernate: SELECT D.service_id AS service_id FROM (SELECT DISTINCT(B.user_id) AS common_uid FROM ServiceLike A, ServiceLike B WHERE A.user_id = ? AND A.service_id = B.service_id AND A.user_id <> B.user_id) AS C,  ServiceLike D WHERE C.common_uid = D.user_id AND D.service_id NOT IN (SELECT service_id FROM ServiceLike where user_id = ?) GROUP BY (D.service_id) ORDER BY (COUNT(*)) DESC LIMIT 5 
+Start finding RecommendID 12
+RecommendID: 12
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Backend Calling getAllClimateServices
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+11
+Hibernate: select comment0_.id as id1_1_, comment0_.commenter as commente2_1_, comment0_.content as content3_1_, comment0_.serviceId as serviceI4_1_, comment0_.time as time5_1_ from Comment comment0_ where comment0_.serviceId=?
+Finish finding comments
+0
+hehedahaaha
+start to search climate service by key words
+Hibernate: select c.* from ClimateService c where c.name like ?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+get service successfully
+hahaha
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+ISLIKE email: bob@gmail.com serviceID: 11
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select servicelik0_.service_id as service_1_10_, servicelik0_.user_id as user_id2_10_ from ServiceLike servicelik0_ where servicelik0_.user_id=? and servicelik0_.service_id=?
+Hibernate: select climateser0_.id as id1_0_0_, climateser0_.avgScore as avgScore2_0_0_, climateser0_.createTime as createTi3_0_0_, climateser0_.name as name4_0_0_, climateser0_.purpose as purpose5_0_0_, climateser0_.rootServiceId as rootServ6_0_0_, climateser0_.scenario as scenario7_0_0_, climateser0_.url as url8_0_0_, climateser0_.creatorId as creator11_0_0_, climateser0_.versionNo as versionN9_0_0_, climateser0_.voteCount as voteCou10_0_0_, user1_.id as id1_11_1_, user1_.affiliation as affiliat2_11_1_, user1_.email as email3_11_1_, user1_.faxNumber as faxNumbe4_11_1_, user1_.firstName as firstNam5_11_1_, user1_.highestDegree as highestD6_11_1_, user1_.lastName as lastName7_11_1_, user1_.mailingAddress as mailingA8_11_1_, user1_.middleInitial as middleIn9_11_1_, user1_.password as passwor10_11_1_, user1_.phoneNumber as phoneNu11_11_1_, user1_.researchFields as researc12_11_1_, user1_.title as title13_11_1_, user1_.userName as userNam14_11_1_ from ClimateService climateser0_ left outer join User user1_ on climateser0_.creatorId=user1_.id where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+ISLIKE Response: true
+GetRecommendServices, email = bob@gmail.com
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Get Recommend Services user_id = 112
+Hibernate: SELECT D.service_id AS service_id FROM (SELECT DISTINCT(B.user_id) AS common_uid FROM ServiceLike A, ServiceLike B WHERE A.user_id = ? AND A.service_id = B.service_id AND A.user_id <> B.user_id) AS C,  ServiceLike D WHERE C.common_uid = D.user_id AND D.service_id NOT IN (SELECT service_id FROM ServiceLike where user_id = ?) GROUP BY (D.service_id) ORDER BY (COUNT(*)) DESC LIMIT 5 
+Start finding RecommendID 12
+RecommendID: 12
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_
+admin
+caquilinger
+jbrodie
+rbuchholz
+fcannon
+ochimborazo
+mclavner
+jgristey
+nkille
+mlinz
+emaroon
+gmarques
+cmartinezvi
+amerrifield
+jnanteza
+kneff
+fpolverari
+mroge
+ksauter
+htseng
+abeatriz
+hwei
+kwillmot
+dzermenodia
+kzhang
+lei
+czhai
+btang
+jzhang
+wwang
+xwei
+ifenty
+jteixeira
+ddrewry
+hsu
+kandreadis
+zxing
+tkubar
+jjiang
+qbao
+mqi
+rwang
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+
+test0
+Wei
+aaa
+null
+Yibin  Yan
+alice  alice
+Bob  bob
+7
+Hibernate: select comment0_.id as id1_1_, comment0_.commenter as commente2_1_, comment0_.content as content3_1_, comment0_.serviceId as serviceI4_1_, comment0_.time as time5_1_ from Comment comment0_ where comment0_.serviceId=?
+Finish finding comments
+0
+hehedahaaha
+start to search climate service by key words
+Hibernate: select c.* from ClimateService c where c.name like ?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+get service successfully
+hahaha
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+ISLIKE email: bob@gmail.com serviceID: 7
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select servicelik0_.service_id as service_1_10_, servicelik0_.user_id as user_id2_10_ from ServiceLike servicelik0_ where servicelik0_.user_id=? and servicelik0_.service_id=?
+Hibernate: select climateser0_.id as id1_0_0_, climateser0_.avgScore as avgScore2_0_0_, climateser0_.createTime as createTi3_0_0_, climateser0_.name as name4_0_0_, climateser0_.purpose as purpose5_0_0_, climateser0_.rootServiceId as rootServ6_0_0_, climateser0_.scenario as scenario7_0_0_, climateser0_.url as url8_0_0_, climateser0_.creatorId as creator11_0_0_, climateser0_.versionNo as versionN9_0_0_, climateser0_.voteCount as voteCou10_0_0_, user1_.id as id1_11_1_, user1_.affiliation as affiliat2_11_1_, user1_.email as email3_11_1_, user1_.faxNumber as faxNumbe4_11_1_, user1_.firstName as firstNam5_11_1_, user1_.highestDegree as highestD6_11_1_, user1_.lastName as lastName7_11_1_, user1_.mailingAddress as mailingA8_11_1_, user1_.middleInitial as middleIn9_11_1_, user1_.password as passwor10_11_1_, user1_.phoneNumber as phoneNu11_11_1_, user1_.researchFields as researc12_11_1_, user1_.title as title13_11_1_, user1_.userName as userNam14_11_1_ from ClimateService climateser0_ left outer join User user1_ on climateser0_.creatorId=user1_.id where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+ISLIKE Response: true
+GetRecommendServices, email = bob@gmail.com
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_ where user0_.email=?
+Get Recommend Services user_id = 112
+Hibernate: SELECT D.service_id AS service_id FROM (SELECT DISTINCT(B.user_id) AS common_uid FROM ServiceLike A, ServiceLike B WHERE A.user_id = ? AND A.service_id = B.service_id AND A.user_id <> B.user_id) AS C,  ServiceLike D WHERE C.common_uid = D.user_id AND D.service_id NOT IN (SELECT service_id FROM ServiceLike where user_id = ?) GROUP BY (D.service_id) ORDER BY (COUNT(*)) DESC LIMIT 5 
+Start finding RecommendID 12
+RecommendID: 12
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_ where climateser0_.id=?
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Hibernate: select climateser0_.id as id1_0_, climateser0_.avgScore as avgScore2_0_, climateser0_.createTime as createTi3_0_, climateser0_.name as name4_0_, climateser0_.purpose as purpose5_0_, climateser0_.rootServiceId as rootServ6_0_, climateser0_.scenario as scenario7_0_, climateser0_.url as url8_0_, climateser0_.creatorId as creator11_0_, climateser0_.versionNo as versionN9_0_, climateser0_.voteCount as voteCou10_0_ from ClimateService climateser0_
+Hibernate: select user0_.id as id1_11_0_, user0_.affiliation as affiliat2_11_0_, user0_.email as email3_11_0_, user0_.faxNumber as faxNumbe4_11_0_, user0_.firstName as firstNam5_11_0_, user0_.highestDegree as highestD6_11_0_, user0_.lastName as lastName7_11_0_, user0_.mailingAddress as mailingA8_11_0_, user0_.middleInitial as middleIn9_11_0_, user0_.password as passwor10_11_0_, user0_.phoneNumber as phoneNu11_11_0_, user0_.researchFields as researc12_11_0_, user0_.title as title13_11_0_, user0_.userName as userNam14_11_0_ from User user0_ where user0_.id=?
+Backend Calling getAllClimateServices
+Hibernate: select user0_.id as id1_11_, user0_.affiliation as affiliat2_11_, user0_.email as email3_11_, user0_.faxNumber as faxNumbe4_11_, user0_.firstName as firstNam5_11_, user0_.highestDegree as highestD6_11_, user0_.lastName as lastName7_11_, user0_.mailingAddress as mailingA8_11_, user0_.middleInitial as middleIn9_11_, user0_.password as passwor10_11_, user0_.phoneNumber as phoneNu11_11_, user0_.researchFields as researc12_11_, user0_.title as title13_11_, user0_.userName as userNam14_11_ from User user0_
+admin
+caquilinger
+jbrodie
+rbuchholz
+fcannon
+ochimborazo
+mclavner
+jgristey
+nkille
+mlinz
+emaroon
+gmarques
+cmartinezvi
+amerrifield
+jnanteza
+kneff
+fpolverari
+mroge
+ksauter
+htseng
+abeatriz
+hwei
+kwillmot
+dzermenodia
+kzhang
+lei
+czhai
+btang
+jzhang
+wwang
+xwei
+ifenty
+jteixeira
+ddrewry
+hsu
+kandreadis
+zxing
+tkubar
+jjiang
+qbao
+mqi
+rwang
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+
+test0
+Wei
+aaa
+null
+Yibin  Yan
+alice  alice
+Bob  bob
